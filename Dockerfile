@@ -14,6 +14,7 @@ ENV NODE_ENV=${NODE_ENV}
 WORKDIR /app
 
 COPY package.json ./
+RUN npm install express
 RUN npm install --only=production
 
 COPY --from=build /app/dist ./dist
